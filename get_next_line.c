@@ -6,7 +6,7 @@
 /*   By: aadamik <aadamik@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 19:01:20 by aadamik           #+#    #+#             */
-/*   Updated: 2024/02/02 17:49:23 by aadamik          ###   ########.fr       */
+/*   Updated: 2024/02/03 16:19:48 by aadamik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*get_str(char *str, int fd)
 	bytes_read = 1;
 	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)
-		return (NULL);
+		return (free(str), NULL);
 	while (bytes_read > 0 && !ft_strchr(str, '\n'))
 	{
 		bytes_read = read(fd, buf, BUFFER_SIZE);
@@ -29,6 +29,8 @@ char	*get_str(char *str, int fd)
 			return (free(str), free(buf), NULL);
 		buf[bytes_read] = '\0';
 		tmp = ft_strjoin(str, buf);
+		if (!tmp)
+			return (free(str), free(buf), NULL);
 		free(str);
 		str = tmp;
 	}
@@ -93,6 +95,7 @@ char	*get_next_line(int fd)
 {
 	static char	*str;
 	char		*line;
+	char		*tmp;
 
 	if (BUFFER_SIZE <= 0 || fd < 0)
 		return (NULL);
@@ -102,11 +105,17 @@ char	*get_next_line(int fd)
 		if (!str)
 			return (NULL);
 	}
-	str = get_str(str, fd);
-	if (!str)
-		return (NULL);
+	tmp = get_str(str, fd);
+	if (!tmp)
+		return (str = NULL, NULL);
+	str = tmp;
 	line = get_line1(str, 0);
-	str = update_str(str);
+	if (!line)
+		return (free(str), str = NULL, NULL);
+	tmp = update_str(str);
+	if (!tmp)
+		str = NULL;
+	str = tmp;
 	return (line);
 }
 

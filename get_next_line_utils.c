@@ -6,7 +6,7 @@
 /*   By: aadamik <aadamik@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 19:39:51 by aadamik           #+#    #+#             */
-/*   Updated: 2024/02/02 17:56:17 by aadamik          ###   ########.fr       */
+/*   Updated: 2024/02/04 19:11:29 by aadamik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,24 +64,6 @@ char	*ft_strchr(char *s, int c)
 		return (&s[i]);
 	}
 	return (NULL);
-}
-
-char	*ft_strdup(char *s)
-{
-	int		i;
-	char	*str;
-
-	str = malloc(ft_strlen(s) + 1);
-	if (str == NULL)
-		return (NULL);
-	i = 0;
-	while (s[i] != '\0')
-	{
-		str[i] = s[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
 }
 
 void	*ft_calloc(int n, int size)

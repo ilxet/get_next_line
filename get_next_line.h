@@ -6,7 +6,7 @@
 /*   By: aadamik <aadamik@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 23:57:27 by aadamik           #+#    #+#             */
-/*   Updated: 2024/02/02 17:55:15 by aadamik          ###   ########.fr       */
+/*   Updated: 2024/02/04 19:11:35 by aadamik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ char	*get_next_line(int fd);
 int		ft_strlen(char *s);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchr(char *s, int c);
-char	*ft_strdup(char *s);
 void	*ft_calloc(int n, int size);
 
 #endif
