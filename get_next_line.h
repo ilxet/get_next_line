@@ -6,7 +6,7 @@
 /*   By: aadamik <aadamik@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 23:57:27 by aadamik           #+#    #+#             */
-/*   Updated: 2024/02/04 19:11:35 by aadamik          ###   ########.fr       */
+/*   Updated: 2024/04/06 13:44:43 by aadamik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,16 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
+# include "../ft_printf/libft/libft.h"
 
 char	*get_line1(char *str, int i);
 char	*get_str(char *str, int fd);
 char	*update_str(char *str);
 char	*get_next_line(int fd);
-int		ft_strlen(char *s);
-char	*ft_strjoin(char *s1, char *s2);
-char	*ft_strchr(char *s, int c);
-void	*ft_calloc(int n, int size);
+// int		ft_strlen(char *s);
+// char	*ft_strjoin(char *s1, char *s2);
+// char	*ft_strchr(char *s, int c);
+// void	*ft_calloc(int n, int size);
 
 #endif

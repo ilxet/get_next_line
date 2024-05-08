@@ -6,7 +6,7 @@
 /*   By: aadamik <aadamik@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 19:01:20 by aadamik           #+#    #+#             */
-/*   Updated: 2024/02/03 16:19:48 by aadamik          ###   ########.fr       */
+/*   Updated: 2024/04/06 14:41:17 by aadamik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ char	*get_next_line(int fd)
 // 	int i;
 
 // 	i = 0;
-// 	fd = open("test.txt", O_RDONLY);
+// 	fd = open("test.ber", O_RDONLY);
 // 	line = get_next_line(fd);
 // 	while (line)
 // 	{
